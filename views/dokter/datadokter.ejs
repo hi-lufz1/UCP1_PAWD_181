@@ -1,0 +1,28 @@
+<h2 class="mb-4">Daftar Dokter</h2>
+<a href="/doctors/add" class="btn btn-primary mb-4">Tambah Dokter</a>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Nama</th>
+            <th>Spesialisasi</th>
+            <th>Aktif</th>
+            <th>Aksi</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% doctors.forEach(function(d) { %>
+        <tr>
+            <td><%= d.id %></td>
+            <td><%= d.name %></td>
+            <td><%= d.specialization %></td>
+            <td><%= d.active ? 'Yes' : 'No' %></td>
+            <td>
+                <a href="/doctors/edit/<%= d.id %>" class="btn btn-warning btn-sm">Edit</a>
+                <a href="/doctors/delete/<%= d.id %>" class="btn btn-danger btn-sm" onclick="return confirm('Yakin ingin menghapus?')">Hapus</a>
+            </td>
+        </tr>
+        <% }); %>
+    </tbody>
+</table>

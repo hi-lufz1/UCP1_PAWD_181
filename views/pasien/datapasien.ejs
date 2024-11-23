@@ -1,0 +1,40 @@
+<h2 class="mb-3">Daftar Pasien</h2>
+
+<!-- Tombol Tambah Pasien -->
+<div class="d-flex justify-content-between align-items-center mb-3">
+    <a href="/pasien/add" class="btn btn-success">Tambah Pasien</a>
+</div>
+
+<!-- Tabel Daftar Pasien -->
+<table class="table table-striped table-bordered">
+    <thead class="table-dark">
+        <tr>
+            <th>ID</th>
+            <th>Nama</th>
+            <th>Usia</th>
+            <th>Gender</th>
+            <th>Alamat</th>
+            <th>Diagnosa</th>
+            <th>Aksi</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% pasien.forEach(function(pasien) { %>
+        <tr>
+            <td><%= pasien.id %></td>
+            <td><%= pasien.nama %></td>
+            <td><%= pasien.usia %></td>
+            <td><%= pasien.gender %></td>
+            <td><%= pasien.alamat %></td>
+            <td><%= pasien.diagnosa %></td>
+            <td>
+                <a href="/pasien/edit/<%= pasien.id %>" class="btn btn-primary btn-sm me-2">Edit</a>
+                <a href="/pasien/delete/<%= pasien.id %>" class="btn btn-danger btn-sm"
+                   onclick="return confirm('Apakah Anda yakin ingin menghapus pasien ini?');">
+                    Hapus
+                </a>
+            </td>
+        </tr>
+        <% }); %>
+    </tbody>
+</table>

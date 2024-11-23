@@ -1,0 +1,24 @@
+{
+  "name": "rumahsakit",
+  "version": "1.0.0",
+  "description": "Aplikasi Web Rumah Sakit",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "dev": "nodemon app.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^3.1.7"
+  },
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "dotenv": "^16.4.5",
+    "ejs": "^3.1.10",
+    "express": "^4.21.1",
+    "express-ejs-layouts": "^2.5.1",
+    "mysql": "^2.18.1",
+    "mysql2": "^3.11.4"
+  }
+}
